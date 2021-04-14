@@ -1,4 +1,3 @@
-import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -14,11 +13,10 @@ assert "Google" in driver.title
 elem = driver.find_element_by_name("q")
 elem.clear()
 elem.send_keys("d9nich")
-time.sleep(5)  # Let the user actually see something!
 elem.send_keys(Keys.RETURN)
 assert "Danylo Halaiko" in driver.page_source
-elem = driver.find_element_by_css_selector('a[href="https://github.com/d9nchik"]')
+elem = driver.find_element_by_css_selector(
+    'a[href="https://github.com/d9nchik"]')
 elem.click()
 assert 'Ask me about Java, Python, Golang, JavaScript, Kotlin, TypeScript, C++' in driver.page_source
-time.sleep(5)  # Let the user actually see something!
 driver.close()
