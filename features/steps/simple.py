@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 
 use_step_matcher("re")
 
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome()
 
 
 @given("I have access to the internet")
