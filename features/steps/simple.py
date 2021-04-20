@@ -13,7 +13,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     driver.get("http://www.google.com")
-    assert "Google" in driver.title
+    assert "Gogle" in driver.title
 
 
 @step("I have entered d9nich in google search")
