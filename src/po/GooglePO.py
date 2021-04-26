@@ -2,19 +2,27 @@ from selenium.webdriver.common.keys import Keys
 
 
 class GooglePO:
-    def open_google(self, driver):
-        driver.get("https://www.google.com")
 
-    def get_google_title(self, driver):
-        return driver.title
+    def __init__(self, driver) -> None:
+        super().__init__()
+        self.driver = driver
 
-    def search(self, driver, term):
-        elem = driver.find_element_by_name("q")
+    def open_google(self):
+        self.driver.get("https://www.google.com")
+
+    def get_google_title(self):
+        return self.driver.title
+
+    def search(self, term):
+        elem = self.driver.find_element_by_name("q")
         elem.clear()
         elem.send_keys(term)
         elem.send_keys(Keys.RETURN)
 
-    def open_first_search_result(self, driver):
-        elem = driver.find_element_by_css_selector(
+    def open_first_search_result(self):
+        elem = self.driver.find_element_by_css_selector(
             'a[href^="https://github.com"]')
         elem.click()
+
+    def get_page_source(self):
+        return self.driver.page_source

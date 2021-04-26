@@ -1,32 +1,32 @@
 from behave import *
 
-from src.po import GooglePO as go
-from src.po import GithubPO as git
-
 
 @given("I have access to the internet")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    go.GooglePO().open_google(context.driver)
-    assert "Google" in go.GooglePO().get_google_title(context.driver)
+    context.google_po.open_google()
+    assert "Google" in context.google_po.get_google_title()
 
 
 @step('I have entered {nickname} in google search')
 def step_impl(context, nickname):
     """
+    :param nickname:
     :type context: behave.runner.Context
     """
     assert nickname != ''
-    go.GooglePO().search(context.driver, nickname)
+    context.google_po.search(nickname)
 
-@step('page contains {realName}')
-def step_impl(context, realName):
+
+@step('page contains {real_name}')
+def step_impl(context, real_name):
     """
+    :param real_name: 
     :type context: behave.runner.Context
     """
-    assert realName in context.driver.page_source
+    assert real_name in context.google_po.get_page_source()
 
 
 @when("I click on first github link")
@@ -34,12 +34,13 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    go.GooglePO().open_first_search_result(context.driver)
+    context.google_po.open_first_search_result()
 
 
-@then('it would contain {learningSkills}')
-def step_impl(context, learningSkills):
+@then('it would contain {learning_skills}')
+def step_impl(context, learning_skills):
     """
+    :param learning_skills:
     :type context: behave.runner.Context
     """
-    assert learningSkills in git.GithubPO().get_page_source(context.driver)
+    assert learning_skills in context.github_po.get_page_source(context.driver)
