@@ -43,4 +43,4 @@ def step_impl(context, learning_skills):
     :param learning_skills:
     :type context: behave.runner.Context
     """
-    assert learning_skills in context.github_po.get_page_source(context.driver)
+    assert learning_skills in context.github_po.get_page_source()
