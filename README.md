@@ -4,7 +4,7 @@ Testing using webdrive
 
 ## BDD
 
-our project uses [behave](https://github.com/behave/behave) library to create bdd tests
+our project uses [behave](https://github.com/behave/behave) library to create [bdd](https://en.wikipedia.org/wiki/Behavior-driven_development) tests
 
 ## CI
 for CI we use [circleCI](https://circleci.com) infrastructure to run wedriver tests
