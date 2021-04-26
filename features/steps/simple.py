@@ -1,5 +1,4 @@
 from behave import *
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
@@ -7,7 +6,6 @@ from selenium.webdriver.common.keys import Keys
 
 @given("I have access to the internet")
 def step_impl(context):
-    context.driver = webdriver.Chrome()
     """
     :type context: behave.runner.Context
     """
@@ -51,4 +49,3 @@ def step_impl(context, learningSkills):
     :type context: behave.runner.Context
     """
     assert learningSkills in context.driver.page_source
-    context.driver.close()
