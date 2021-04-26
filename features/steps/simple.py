@@ -1,7 +1,5 @@
 from behave import *
-from selenium.webdriver.common.keys import Keys
 
-# More about scenario outline 👀 here https://jenisys.github.io/behave.example/tutorials/tutorial04.html
 from src.po import GooglePO as go
 from src.po import GithubPO as git
 
