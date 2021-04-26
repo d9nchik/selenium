@@ -5,7 +5,7 @@ from selenium import webdriver
 @fixture
 def selenium_browser_chrome(context):
     # -- HINT: @behave.fixture is similar to @contextlib.contextmanager
-    context.driver = webdriver.Chrome('./chromedriver')
+    context.driver = webdriver.Chrome()
     yield context.driver
     # -- CLEANUP-FIXTURE PART:
     context.driver.quit()
