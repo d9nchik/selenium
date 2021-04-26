@@ -2,6 +2,10 @@
 # selenium
 Testing using webdrive
 
+## Howto start
+- ### install requirements ```pip install -r requirements.txt```
+- ### run ```behave``` in your terminal
+
 ## BDD
 
 our project uses [behave](https://github.com/behave/behave) library to create [bdd](https://en.wikipedia.org/wiki/Behavior-driven_development) tests
