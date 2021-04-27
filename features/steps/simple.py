@@ -13,7 +13,7 @@ def step_impl(context):
 @step('I have entered {nickname} in google search')
 def step_impl(context, nickname):
     """
-    :param nickname:
+    :param nickname: string of person nickname
     :type context: behave.runner.Context
     """
     assert nickname != ''
@@ -23,7 +23,7 @@ def step_impl(context, nickname):
 @step('page contains {real_name}')
 def step_impl(context, real_name):
     """
-    :param real_name: 
+    :param real_name: real_name from simple.feature
     :type context: behave.runner.Context
     """
     assert real_name in context.google_po.get_page_source()
@@ -40,7 +40,7 @@ def step_impl(context):
 @then('it would contain {learning_skills}')
 def step_impl(context, learning_skills):
     """
-    :param learning_skills:
+    :param learning_skills: long string of what should be on GitHub person page
     :type context: behave.runner.Context
     """
     assert learning_skills in context.github_po.get_page_source()
