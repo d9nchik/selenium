@@ -1,12 +1,8 @@
 from selenium.webdriver.common.keys import Keys
+import src.po.DefaultPO as d_po
 
 
-class GooglePO:
-
-    def __init__(self, driver) -> None:
-        super().__init__()
-        self.driver = driver
-
+class GooglePO(d_po.DefaultPO):
     def open_google(self):
         self.driver.get("https://www.google.com")
 
@@ -23,6 +19,3 @@ class GooglePO:
         elem = self.driver.find_element_by_css_selector(
             'a[href^="https://github.com"]')
         elem.click()
-
-    def get_page_source(self):
-        return self.driver.page_source
